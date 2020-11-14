@@ -1,0 +1,48 @@
+@page
+@model PetShop.Pages_Agendamento.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Agendamento[0].DataAgendamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Agendamento[0].Serviços)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Agendamento[0].Petivery)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Agendamento) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAgendamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Serviços)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Petivery)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.AgendamentoId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.AgendamentoId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.AgendamentoId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

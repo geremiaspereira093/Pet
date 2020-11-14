@@ -1,0 +1,84 @@
+@page
+@model PetShop.Pages_Cadastro.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cadastro[0].email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cadastro[0].NomeTutor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cadastro[0].CPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cadastro[0].Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cadastro[0].endereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cadastro[0].NomePet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cadastro[0].Especie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cadastro[0].senha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cadastro[0].confirmaSenha)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Cadastro) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeTutor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomePet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Especie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.senha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.confirmaSenha)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CadastroId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CadastroId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CadastroId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

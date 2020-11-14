@@ -1,0 +1,42 @@
+@page
+@model PetShop.Pages_Login.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Login[0].Usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Login[0].Senha)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Login) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Senha)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.LoginId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.LoginId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.LoginId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

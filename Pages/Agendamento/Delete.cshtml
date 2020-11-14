@@ -1,0 +1,40 @@
+@page
+@model PetShop.Pages_Agendamento.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Agendamento</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agendamento.DataAgendamento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agendamento.DataAgendamento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agendamento.Serviços)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agendamento.Serviços)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Agendamento.Petivery)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agendamento.Petivery)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Agendamento.AgendamentoId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
